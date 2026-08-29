@@ -1,5 +1,5 @@
 /* ============================================================
-   MJ FRYS â€” App Logic
+   MJ FRYS — App Logic
    File: js/app.js
    Handles: menu rendering, cart, checkout, payments, delivery
    ============================================================ */
@@ -7,16 +7,16 @@
 /* ---------- Product catalogue ----------
    Prices in KES. Image paths are local (relative).           */
 const PRODUCTS = [
-  { id: 'chips-large',  name: 'Chips (Large)',   cat: 'chips',     price: 100, unit: 'plate',   img: 'Images/chips-large.jpg', tag: 'Bestseller', desc: 'Crispy golden fries, freshly fried to perfe[...]'},
-  { id: 'chips-small',  name: 'Chips (Small)',   cat: 'chips',     price: 70,  unit: 'plate',   img: 'Images/chips-small.jpg', tag: 'Popular',    desc: 'Crispy golden fries in a smaller portion â[...]'},
-  { id: 'chicken-full', name: 'Full Chicken',    cat: 'chicken',   price: 640, unit: 'whole',   img: 'Images/chicken-full.png', tag: 'Feast',     desc: 'A whole flame-grilled chicken, juicy inside[...]'},
-  { id: 'chicken-half', name: 'Half Chicken',    cat: 'chicken',   price: 320, unit: 'half',    img: 'Images/chicken-full.png', tag: 'Hot',       desc: 'Half a flame-grilled chicken â€” big o[...]'},
-  { id: 'chicken-qrt',  name: 'Quarter Chicken', cat: 'chicken',   price: 160, unit: 'quarter', img: 'Images/chicken-full.png', tag: 'Value',     desc: 'A quarter grilled chicken. Great with a sid[...]'},
-  { id: 'sausage',      name: 'Sausage',         cat: 'grill',     price: 50,  unit: 'piece',   img: 'Images/sausage.png', tag: 'Grilled',      desc: 'Sizzling grilled sausage, smoky and juicy. A [...]'},
-  { id: 'smokie',       name: 'Smokie',          cat: 'grill',     price: 40,  unit: 'piece',   img: 'Images/smokie.png', tag: 'Street Fav',    desc: 'Smoky split grilled smokie served with kachum[...]'},
-  { id: 'samosa',       name: 'Samosa',          cat: 'snack',     price: 30,  unit: 'piece',   img: 'Images/samosa.png', tag: 'Crunchy',       desc: 'Crispy golden pastry packed with spiced savou[...]'},
-  { id: 'soda',         name: 'Soda 300ml',      cat: 'drinks',    price: 50,  unit: 'bottle',  img: 'Images/soda.png', tag: 'Chilled',       desc: 'Ice-cold 300ml soft drink to wash it all down.'},
-  { id: 'sauce',        name: 'Tomato Sauce',    cat: 'extras',    price: 5,   unit: ' sachet', img: 'Images/sauce.png', tag: 'Add-on',        desc: 'Tomato ketchup sachet â€” the perfect dip[...]'},
+  { id: 'chips-large',  name: 'Chips (Large)',   cat: 'chips',     price: 100, unit: 'plate',   img: '/MJ-FRYS-/Images/chips-large.jpg', tag: 'Bestseller', desc: 'Crispy golden fries, freshly fried to perfection.'},
+  { id: 'chips-small',  name: 'Chips (Small)',   cat: 'chips',     price: 70,  unit: 'plate',   img: '/MJ-FRYS-/Images/chips-small.jpg', tag: 'Popular',    desc: 'Crispy golden fries in a smaller portion.'},
+  { id: 'chicken-full', name: 'Full Chicken',    cat: 'chicken',   price: 640, unit: 'whole',   img: '/MJ-FRYS-/Images/chicken-full.png', tag: 'Feast',     desc: 'A whole flame-grilled chicken, juicy inside.'},
+  { id: 'chicken-half', name: 'Half Chicken',    cat: 'chicken',   price: 320, unit: 'half',    img: '/MJ-FRYS-/Images/chicken-full.png', tag: 'Hot',       desc: 'Half a flame-grilled chicken — big on flavour.'},
+  { id: 'chicken-qrt',  name: 'Quarter Chicken', cat: 'chicken',   price: 160, unit: 'quarter', img: '/MJ-FRYS-/Images/chicken-full.png', tag: 'Value',     desc: 'A quarter grilled chicken. Great with a side.'},
+  { id: 'sausage',      name: 'Sausage',         cat: 'grill',     price: 50,  unit: 'piece',   img: '/MJ-FRYS-/Images/sausage.png', tag: 'Grilled',      desc: 'Sizzling grilled sausage, smoky and juicy.'},
+  { id: 'smokie',       name: 'Smokie',          cat: 'grill',     price: 40,  unit: 'piece',   img: '/MJ-FRYS-/Images/smokie.png', tag: 'Street Fav',    desc: 'Smoky split grilled smokie served with kachumbari.'},
+  { id: 'samosa',       name: 'Samosa',          cat: 'snack',     price: 30,  unit: 'piece',   img: '/MJ-FRYS-/Images/samosa.png', tag: 'Crunchy',       desc: 'Crispy golden pastry packed with spiced savoury filling.'},
+  { id: 'soda',         name: 'Soda 300ml',      cat: 'drinks',    price: 50,  unit: 'bottle',  img: '/MJ-FRYS-/Images/soda.png', tag: 'Chilled',       desc: 'Ice-cold 300ml soft drink to wash it all down.'},
+  { id: 'sauce',        name: 'Tomato Sauce',    cat: 'extras',    price: 5,   unit: ' sachet', img: '/MJ-FRYS-/Images/sauce.png', tag: 'Add-on',        desc: 'Tomato ketchup sachet — the perfect dip.'},
 ];
 
 const DELIVERY_FEE = 100;          // flat delivery fee in KES
@@ -73,7 +73,7 @@ function addToCart(id, btn) {
   const ex = cart.find(i => i.id === id);
   if (ex) ex.qty++; else cart.push({ id: p.id, name: p.name, price: p.price, unit: p.unit, img: p.img, qty: 1 });
   saveCart(); updateCartUI();
-  if (btn) { const t=btn.textContent; btn.textContent='âœ“ Added'; btn.classList.add('added'); setTimeout(()=>{btn.textContent=t;btn.classList.remove('added');},1100); }
+  if (btn) { const t=btn.textContent; btn.textContent='✔ Added'; btn.classList.add('added'); setTimeout(()=>{btn.textContent=t;btn.classList.remove('added');},1100); }
   toast(`${p.name} added to cart`);
   bumpCart();
 }
@@ -96,7 +96,7 @@ function updateCartUI() {
   const body = $('#cart-items');
   if (!body) return;
   if (cart.length === 0) {
-    body.innerHTML = `<div class="cart-empty"><div class="big">ðŸ›’</div><p>Your cart is empty.<br>Add something delicious!</p></div>`;
+    body.innerHTML = `<div class="cart-empty"><div class="big">🛒</div><p>Your cart is empty.<br>Add something delicious!</p></div>`;
   } else {
     body.innerHTML = cart.map(i => `
       <div class="cart-item">
@@ -105,7 +105,7 @@ function updateCartUI() {
           <div class="name">${i.name}</div>
           <div class="unit">${ksh(i.price)} / ${i.unit.trim()}</div>
           <div class="qty">
-            <button data-dec="${i.id}">âˆ’</button>
+            <button data-dec="${i.id}">−</button>
             <span>${i.qty}</span>
             <button data-inc="${i.id}">+</button>
           </div>
@@ -165,10 +165,10 @@ function placeOrder() {
   const pay = selectedPay === 'mpesa' ? 'M-Pesa ('+$('#f-mpesa').value.trim()+')' : 'Cash on Delivery';
 
   // Build a WhatsApp order message for the shop
-  let msg = `*NEW ORDER â€” MJ FRYS*%0AOrder ID: ${orderId}%0A%0A*Items:*%0A`;
-  cart.forEach(i=>{ msg += `â€¢ ${i.name} x${i.qty} â€” ${ksh(i.price*i.qty)}%0A`; });
+  let msg = `*NEW ORDER — MJ FRYS*%0AOrder ID: ${orderId}%0A%0A*Items:*%0A`;
+  cart.forEach(i=>{ msg += `• ${i.name} x${i.qty} — ${ksh(i.price*i.qty)}%0A`; });
   msg += `%0A*Subtotal:* ${ksh(subtotal())}%0A*Delivery:* ${deliveryFee()===0?'FREE':ksh(deliveryFee())}%0A*TOTAL:* ${ksh(grandTotal())}%0A%0A*Customer:* ${name}%0A*Phone:* ${phone}%0A*Address:* [...]`;
-  const waLink = `https://wa.me/${WHATSAPP}?text=${msg}`;
+  const waLink = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
 
   // Show success screen
   $('#checkout-form-wrap').classList.add('hidden');
@@ -200,7 +200,7 @@ function toast(text, type='ok') {
   if (!wrap) { wrap = document.createElement('div'); wrap.className='toast-wrap'; document.body.appendChild(wrap); }
   const el = document.createElement('div');
   el.className = `toast ${type==='warn'?'':'ok'}`;
-  el.innerHTML = `<span class="t-ico">${type==='warn'?'âš ï¸':'âœ“'}</span><span>${text}</span>`;
+  el.innerHTML = `<span class="t-ico">${type==='warn'?'⚠️':'✔️'}</span><span>${text}</span>`;
   wrap.appendChild(el);
   setTimeout(()=>{ el.style.opacity='0'; el.style.transform='translateY(10px)'; setTimeout(()=>el.remove(),300); }, 2600);
 }
@@ -236,20 +236,20 @@ function init() {
   }));
 
   // cart open/close
-  $('#open-cart').addEventListener('click', openCart);
-  $('#close-cart').addEventListener('click', closeCart);
-  $('#overlay').addEventListener('click', closeCart);
-  $('#cart-checkout').addEventListener('click', openCheckout);
+  const openCartBtn = $('#open-cart'); if (openCartBtn) openCartBtn.addEventListener('click', openCart);
+  const closeCartBtn = $('#close-cart'); if (closeCartBtn) closeCartBtn.addEventListener('click', closeCart);
+  const overlayEl = $('#overlay'); if (overlayEl) overlayEl.addEventListener('click', closeCart);
+  const cartCheckoutBtn = $('#cart-checkout'); if (cartCheckoutBtn) cartCheckoutBtn.addEventListener('click', openCheckout);
 
   // checkout
-  $('#checkout-close').addEventListener('click', resetCheckout);
-  $('#checkout-overlay').addEventListener('click', resetCheckout);
-  $('#place-order').addEventListener('click', placeOrder);
-  $('#order-more').addEventListener('click', resetCheckout);
+  const checkoutClose = $('#checkout-close'); if (checkoutClose) checkoutClose.addEventListener('click', resetCheckout);
+  const checkoutOverlay = $('#checkout-overlay'); if (checkoutOverlay) checkoutOverlay.addEventListener('click', resetCheckout);
+  const placeOrderBtn = $('#place-order'); if (placeOrderBtn) placeOrderBtn.addEventListener('click', placeOrder);
+  const orderMoreBtn = $('#order-more'); if (orderMoreBtn) orderMoreBtn.addEventListener('click', resetCheckout);
   $$('.pay-opt').forEach(o=>o.addEventListener('click', ()=>selectPay(o.dataset.pay, o)));
 
   // mobile menu
-  $('#menu-toggle').addEventListener('click', ()=> $('#nav-links').classList.toggle('mobile-open'));
+  const menuToggle = $('#menu-toggle'); if (menuToggle) menuToggle.addEventListener('click', ()=> $('#nav-links').classList.toggle('mobile-open'));
   $$('#nav-links a').forEach(a=>a.addEventListener('click', ()=> $('#nav-links').classList.remove('mobile-open')));
 
   // scroll
