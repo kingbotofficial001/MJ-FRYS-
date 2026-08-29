@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MJ FRYS â€” Your Daily Dose of Delicious. Order crispy chips, grilled chicken, sausages, smokies, samosas & drinks online. Fast delivery, M-Pesa payments.">
+  <meta name="theme-color" content="#0a0a0f">
+  <meta property="og:title" content="MJ FRYS â€” Your Daily Dose of Delicious">
+  <meta property="og:description" content="Order hot & crispy food online. Fast delivery, M-Pesa accepted.">
+  <meta property="og:image" content="images/hero.png">
+  <title>MJ FRYS â€” Your Daily Dose of Delicious</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress"></div>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="brand">
+        <img src="images/logo.png" alt="MJ FRYS logo" class="brand-logo">
+        <span class="brand-text">MJ&nbsp;FRYS<span class="brand-dot">.</span></span>
+      </a>
+
+      <button id="menu-toggle" class="menu-toggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="nav-links" class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#features">Why Us</a>
+        <a href="#delivery">Delivery</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button id="open-cart" class="cart-btn" aria-label="Open cart">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+        <span id="cart-count" class="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section id="hero" class="hero">
+    <div class="hero-bg" style="background-image:url('images/hero.png')"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-content">
+      <span class="hero-badge reveal">ðŸ”¥ #1 Street Food Spot in Town</span>
+      <h1 class="hero-title reveal">
+        Your Daily Dose of<br><span class="grad">Delicious.</span>
+      </h1>
+      <p class="hero-sub reveal">
+        Hot, crispy &amp; grilled to perfection. Order chips, chicken, sausages,
+        smokies &amp; samosas online â€” pay with M-Pesa and get it delivered fast.
+      </p>
+      <div class="hero-cta reveal">
+        <a href="#menu" class="btn btn-primary">Order Now ðŸŸ</a>
+        <a href="#delivery" class="btn btn-ghost">Delivery Info</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat"><span class="stat-num">10+</span><span class="stat-label">Menu Items</span></div>
+        <div class="stat"><span class="stat-num">15min</span><span class="stat-label">Avg Delivery</span></div>
+        <div class="stat"><span class="stat-num">M-Pesa</span><span class="stat-label">Easy Pay</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES ============ -->
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title reveal">Why <span class="grad">MJ FRYS</span>?</h2>
+      <p class="section-sub reveal">A high-tech ordering experience built for fast, delicious food.</p>
+      <div class="feature-grid">
+        <article class="feature-card reveal">
+          <div class="feature-ico">ðŸ›µ</div>
+          <h3>Fast Delivery</h3>
+          <p>Hot food at your door in minutes. Free delivery on orders over KSh 1,500.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-ico">ðŸ“±</div>
+          <h3>Online Payment</h3>
+          <p>Pay easily with M-Pesa or choose Cash on Delivery. Secure &amp; instant.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-ico">ðŸŒ¿</div>
+          <h3>Fresh Daily</h3>
+          <p>Every order is cooked fresh to order â€” never frozen, never reheated.</p>
+        </article>
+        <article class="feature-card reveal">
+          <div class="feature-ico">ðŸ”¥</div>
+          <h3>Hot &amp; Crispy</h3>
+          <p>Flame-grilled chicken and golden fries, served piping hot every time.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MENU ============ -->
+  <section id="menu" class="menu">
+    <div class="container">
+      <h2 class="section-title reveal">Our <span class="grad">Menu</span></h2>
+      <p class="section-sub reveal">Tap an item to add it to your cart. Pay your way, eat your way.</p>
+
+      <div class="chips reveal">
+        <button class="chip active" data-filter="all">All</button>
+        <button class="chip" data-filter="chips">Chips</button>
+        <button class="chip" data-filter="chicken">Chicken</button>
+        <button class="chip" data-filter="grill">Grill</button>
+        <button class="chip" data-filter="snack">Snacks</button>
+        <button class="chip" data-filter="drinks">Drinks</button>
+        <button class="chip" data-filter="extras">Extras</button>
+      </div>
+
+      <div id="menu-grid" class="menu-grid">
+        <!-- Cards rendered by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DELIVERY BAND ============ -->
+  <section id="delivery" class="delivery-band">
+    <div class="container delivery-inner reveal">
+      <div class="delivery-text">
+        <h2> Hungry? We Deliver. ðŸ“ž</h2>
+        <p>Call or WhatsApp us to place your order directly. Fast delivery across town.</p>
+      </div>
+      <div class="delivery-actions">
+        <a href="tel:0734463997" class="btn btn-primary">Call <span class="shop-phone">0734463997</span></a>
+        <a href="https://wa.me/254734463997" class="btn btn-ghost" target="_blank" rel="noopener">WhatsApp Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER / CONTACT ============ -->
+  <footer id="contact" class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <img src="images/logo.png" alt="MJ FRYS" class="footer-logo">
+        <h3 class="brand-text">MJ FRYS<span class="brand-dot">.</span></h3>
+        <p class="tagline">Your Daily Dose of Delicious.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="#menu">Menu</a>
+        <a href="#features">Why Us</a>
+        <a href="#delivery">Delivery</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:0734463997">ðŸ“ž <span class="shop-phone">0734463997</span></a>
+        <a href="https://wa.me/254734463997" target="_blank" rel="noopener">ðŸ’¬ WhatsApp</a>
+      </div>
+      <div class="footer-col">
+        <h4>Payments</h4>
+        <p class="pay-pill">âœ… M-Pesa Accepted</p>
+        <p class="pay-pill">ðŸ’µ Cash on Delivery</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Â© <span id="year">2025</span> MJ FRYS. All rights reserved. Made with ðŸ”¥ &amp; â¤ï¸</p>
+    </div>
+  </footer>
+
+  <!-- ============ CART DRAWER ============ -->
+  <div id="overlay" class="overlay"></div>
+  <aside id="drawer" class="drawer">
+    <div class="drawer-head">
+      <h3>Your Cart ðŸ›’</h3>
+      <button id="close-cart" class="close-btn" aria-label="Close cart">&times;</button>
+    </div>
+    <div id="cart-items" class="drawer-body">
+      <!-- Items rendered by js/app.js -->
+    </div>
+    <div class="drawer-foot">
+      <div class="totals">
+        <div class="t-row"><span>Subtotal</span><span id="cart-sub">KES 0</span></div>
+        <div class="t-row"><span>Delivery</span><span id="cart-del">FREE</span></div>
+        <div class="t-row t-total"><span>Total</span><span id="cart-total">KES 0</span></div>
+      </div>
+      <button id="cart-checkout" class="btn btn-primary btn-block">Checkout â†’</button>
+    </div>
+  </aside>
+
+  <!-- ============ CHECKOUT MODAL ============ -->
+  <div id="checkout-modal" class="modal">
+    <div id="checkout-overlay" class="modal-overlay"></div>
+    <div class="modal-card">
+      <button id="checkout-close" class="close-btn" aria-label="Close checkout">&times;</button>
+
+      <!-- Form view -->
+      <div id="checkout-form-wrap" class="checkout-form-wrap">
+        <h2 class="modal-title">Checkout</h2>
+        <p class="modal-sub">Complete your order below.</p>
+
+        <div class="pay-group">
+          <h4>Payment Method</h4>
+          <div class="pay-options">
+            <div class="pay-opt selected" data-pay="mpesa">
+              <span class="pay-ico">ðŸ“±</span>
+              <span>M-Pesa</span>
+            </div>
+            <div class="pay-opt" data-pay="cash">
+              <span class="pay-ico">ðŸ’µ</span>
+              <span>Cash on Delivery</span>
+            </div>
+          </div>
+          <div id="mpesa-box" class="mpesa-box show">
+            <p class="mpesa-note">Enter the M-Pesa phone number you'll pay from. We'll send a payment prompt.</p>
+          </div>
+        </div>
+
+        <form id="checkout-form" class="checkout-form" onsubmit="return false;">
+          <div class="field">
+            <label for="f-name">Full Name</label>
+            <input id="f-name" type="text" placeholder="e.g. John Mwangi" autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="f-phone">Phone Number</label>
+            <input id="f-phone" type="tel" placeholder="e.g. 0712 345 678" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="f-address">Delivery Address</label>
+            <textarea id="f-address" rows="2" placeholder="Estate, house/flat no., landmark..."></textarea>
+          </div>
+          <div class="field mpesa-field">
+            <label for="f-mpesa">M-Pesa Phone Number</label>
+            <input id="f-mpesa" type="tel" placeholder="e.g. 0712 345 678">
+          </div>
+
+          <div class="checkout-total-row">
+            <span>Total to Pay</span>
+            <span id="checkout-amount" class="checkout-amount">KES 0</span>
+          </div>
+
+          <button id="place-order" class="btn btn-primary btn-block">Place Order âœ…</button>
+        </form>
+      </div>
+
+      <!-- Success view -->
+      <div id="success-screen" class="success-screen hidden">
+        <div class="success-ico">ðŸŽ‰</div>
+        <h2>Order Placed!</h2>
+        <p class="success-order">Your order ID is <strong id="order-id">MJ000000</strong></p>
+        <p id="pay-note" class="pay-note"></p>
+        <a id="wa-link" href="#" class="btn btn-primary btn-block" target="_blank" rel="noopener">
+          ðŸ’¬ Confirm via WhatsApp
+        </a>
+        <button id="order-more" class="btn btn-ghost btn-block">Order More</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ WHATSAPP FAB ============ -->
+  <a id="wa-fab" href="https://wa.me/254734463997" class="wa-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 32 32" width="30" height="30" fill="currentColor"><path d="M16 .5C7.4.5.5 7.4.5 16c0 2.8.8 5.5 2.2 7.9L.5 31.5l7.8-2.1c2.3 1.3 4.9 1.9 7.7 1.9 8.6 0 15.5-6.9 15.5-15.5S24.6.5 16 .5zm0 28.3c-2.5 0-4.9-.7-7-1.9l-.5-.3-4.6 1.2 1.2-4.5-.3-.5c-1.4-2.2-2.1-4.7-2.1-7.3C2.7 8.8 8.8 2.7 16 2.7S29.3 8.8 29.3 16 23.2 28.8 16 28.8zm8.5-9.2c-.5-.2-2.8-1.4-3.2-1.5-.4-.2-.7-.2-1 .2-.3.5-1.1 1.5-1.4 1.8-.3.3-.5.3-.9.1-.5-.2-2-.7-3.8-2.4-1.4-1.3-2.4-2.8-2.6-3.3-.3-.5 0-.7.2-1 .2-.2.5-.5.7-.8.2-.3.3-.5.5-.8.2-.3.1-.6 0-.8-.1-.2-1-2.4-1.4-3.3-.4-.8-.7-.7-1-.7h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 4 1.7 4.2c.2.3 2.9 4.5 7.1 6.3 1 .4 1.8.7 2.4.9.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2.1-1.5.3-.7.3-1.4.2-1.5-.1-.2-.3-.3-.8-.5z"/></svg>
+  </a>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
