@@ -7,16 +7,16 @@
 /* ---------- Product catalogue ----------
    Prices in KES. Image paths are local (relative).           */
 const PRODUCTS = [
-  { id: 'chips-large',  name: 'Chips (Large)',   cat: 'chips',     price: 100, unit: 'plate',   img: 'images/chips-large.jpg', tag: 'Bestseller', desc: 'Crispy golden fries, freshly fried to perfection. A generous large portion.' },
-  { id: 'chips-small',  name: 'Chips (Small)',   cat: 'chips',     price: 70,  unit: 'plate',   img: 'images/chips-small.jpg', tag: 'Popular',    desc: 'Crispy golden fries in a smaller portion â€” perfect for a quick snack.' },
-  { id: 'chicken-full', name: 'Full Chicken',    cat: 'chicken',   price: 640, unit: 'whole',   img: 'images/chicken-full.png', tag: 'Feast',     desc: 'A whole flame-grilled chicken, juicy inside with golden crispy skin.' },
-  { id: 'chicken-half', name: 'Half Chicken',    cat: 'chicken',   price: 320, unit: 'half',    img: 'images/chicken-full.png', tag: 'Hot',       desc: 'Half a flame-grilled chicken â€” big on flavor, easy on the pocket.' },
-  { id: 'chicken-qrt',  name: 'Quarter Chicken', cat: 'chicken',   price: 160, unit: 'quarter', img: 'images/chicken-full.png', tag: 'Value',     desc: 'A quarter grilled chicken. Great with a side of chips and a soda.' },
-  { id: 'sausage',      name: 'Sausage',         cat: 'grill',     price: 50,  unit: 'piece',   img: 'images/sausage.png', tag: 'Grilled',      desc: 'Sizzling grilled sausage, smoky and juicy. A street-food classic.' },
-  { id: 'smokie',       name: 'Smokie',          cat: 'grill',     price: 40,  unit: 'piece',   img: 'images/smokie.png', tag: 'Street Fav',    desc: 'Smoky split grilled smokie served with kachumbari on request.' },
-  { id: 'samosa',       name: 'Samosa',          cat: 'snack',     price: 30,  unit: 'piece',   img: 'images/samosa.png', tag: 'Crunchy',       desc: 'Crispy golden pastry packed with spiced savoury filling.' },
-  { id: 'soda',         name: 'Soda 300ml',      cat: 'drinks',    price: 50,  unit: 'bottle',  img: 'images/soda.png', tag: 'Chilled',       desc: 'Ice-cold 300ml soft drink to wash it all down.' },
-  { id: 'sauce',        name: 'Tomato Sauce',    cat: 'extras',    price: 5,   unit: ' sachet', img: 'images/sauce.png', tag: 'Add-on',        desc: 'Tomato ketchup sachet â€” the perfect dip for your chips.' },
+  { id: 'chips-large',  name: 'Chips (Large)',   cat: 'chips',     price: 100, unit: 'plate',   img: 'Images/chips-large.jpg', tag: 'Bestseller', desc: 'Crispy golden fries, freshly fried to perfe[...]'},
+  { id: 'chips-small',  name: 'Chips (Small)',   cat: 'chips',     price: 70,  unit: 'plate',   img: 'Images/chips-small.jpg', tag: 'Popular',    desc: 'Crispy golden fries in a smaller portion â[...]'},
+  { id: 'chicken-full', name: 'Full Chicken',    cat: 'chicken',   price: 640, unit: 'whole',   img: 'Images/chicken-full.png', tag: 'Feast',     desc: 'A whole flame-grilled chicken, juicy inside[...]'},
+  { id: 'chicken-half', name: 'Half Chicken',    cat: 'chicken',   price: 320, unit: 'half',    img: 'Images/chicken-full.png', tag: 'Hot',       desc: 'Half a flame-grilled chicken â€” big o[...]'},
+  { id: 'chicken-qrt',  name: 'Quarter Chicken', cat: 'chicken',   price: 160, unit: 'quarter', img: 'Images/chicken-full.png', tag: 'Value',     desc: 'A quarter grilled chicken. Great with a sid[...]'},
+  { id: 'sausage',      name: 'Sausage',         cat: 'grill',     price: 50,  unit: 'piece',   img: 'Images/sausage.png', tag: 'Grilled',      desc: 'Sizzling grilled sausage, smoky and juicy. A [...]'},
+  { id: 'smokie',       name: 'Smokie',          cat: 'grill',     price: 40,  unit: 'piece',   img: 'Images/smokie.png', tag: 'Street Fav',    desc: 'Smoky split grilled smokie served with kachum[...]'},
+  { id: 'samosa',       name: 'Samosa',          cat: 'snack',     price: 30,  unit: 'piece',   img: 'Images/samosa.png', tag: 'Crunchy',       desc: 'Crispy golden pastry packed with spiced savou[...]'},
+  { id: 'soda',         name: 'Soda 300ml',      cat: 'drinks',    price: 50,  unit: 'bottle',  img: 'Images/soda.png', tag: 'Chilled',       desc: 'Ice-cold 300ml soft drink to wash it all down.'},
+  { id: 'sauce',        name: 'Tomato Sauce',    cat: 'extras',    price: 5,   unit: ' sachet', img: 'Images/sauce.png', tag: 'Add-on',        desc: 'Tomato ketchup sachet â€” the perfect dip[...]'},
 ];
 
 const DELIVERY_FEE = 100;          // flat delivery fee in KES
@@ -167,7 +167,7 @@ function placeOrder() {
   // Build a WhatsApp order message for the shop
   let msg = `*NEW ORDER â€” MJ FRYS*%0AOrder ID: ${orderId}%0A%0A*Items:*%0A`;
   cart.forEach(i=>{ msg += `â€¢ ${i.name} x${i.qty} â€” ${ksh(i.price*i.qty)}%0A`; });
-  msg += `%0A*Subtotal:* ${ksh(subtotal())}%0A*Delivery:* ${deliveryFee()===0?'FREE':ksh(deliveryFee())}%0A*TOTAL:* ${ksh(grandTotal())}%0A%0A*Customer:* ${name}%0A*Phone:* ${phone}%0A*Address:* ${address}%0A*Payment:* ${pay}`;
+  msg += `%0A*Subtotal:* ${ksh(subtotal())}%0A*Delivery:* ${deliveryFee()===0?'FREE':ksh(deliveryFee())}%0A*TOTAL:* ${ksh(grandTotal())}%0A%0A*Customer:* ${name}%0A*Phone:* ${phone}%0A*Address:* [...]`;
   const waLink = `https://wa.me/${WHATSAPP}?text=${msg}`;
 
   // Show success screen
@@ -263,4 +263,3 @@ function init() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
-
